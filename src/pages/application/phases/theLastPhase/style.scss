@@ -1,0 +1,90 @@
+@import '../../../../mixins.scss';
+
+.theLastPhase {
+    .gridTheLastPhase {
+        display: grid;
+        grid-template-columns: 1fr;
+        @include xl {
+            grid-template-columns: 1fr 1fr;
+        }
+        gap: 20px;
+        .image {
+            background-image: url("../../../../assets/card.png");
+            border-radius: 24px;
+            background-position: bottom center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            overflow: hidden;
+            padding: 20px;
+            min-height: 400px;
+            @include sm {
+                min-height: 500px;
+            }
+            img {
+                position: absolute;
+                bottom: 20px;
+                max-width: 340px;
+                width: 100%;
+                display: block;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .text {
+                display: flex;
+                align-items: center;
+                border-bottom: 2px solid var(--primary);
+                padding-bottom: 15px;
+                p {
+                    font-size: 20px;
+                    font-weight: 500;
+                    text-transform: capitalize;
+                    color: var(--primary);
+                    span {
+                        color: rgba(235, 68, 92, 1);
+                    }
+
+                    @include sm {
+                        font-size: 35px;
+                    }
+                }
+                h2 {
+                    color: var(--primary);
+                    font-size: 35px;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        .input {
+            margin: 15px 0px;
+            &.cardInfo {
+                margin: 10px 0px;
+            }
+        }
+
+        .fieldsInputs {
+            display: flex;
+            .input {
+                margin: 0px;
+                &:first-of-type {
+                    input {
+                        border-top-right-radius: 0px;
+                        border-bottom-right-radius: 0px;
+                        text-align: center;
+                    }
+                }
+                &:last-of-type {
+                    input {
+                        border-top-left-radius: 0px;
+                        border-bottom-left-radius: 0px;
+                        border-left: 1px solid rgba(125, 125, 128, 0.2);
+                        text-align: center;
+                    }
+                }
+            }
+        }
+
+    }
+}

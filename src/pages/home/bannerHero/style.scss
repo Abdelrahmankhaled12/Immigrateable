@@ -1,0 +1,245 @@
+@import '../../../mixins.scss';
+
+.bannerHero {
+    background-color: rgba(246, 244, 246, 1);
+
+    @include md {
+        display: flex;
+        align-items: center;
+        background-image: url('../../../assets/banner.png');
+        height: 550px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top;
+    }
+
+    .image {
+        display: block;
+
+        @include md {
+            display: none;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+
+        @include md {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .text {
+            h1 {
+                color: var(--primary);
+                font-size: 38px;
+                font-weight: 500;
+                line-height: 1.2;
+                text-align: center;
+
+                @include sm {
+                    font-size: 54px;
+                }
+
+                @include md {
+                    text-align: start;
+                }
+
+                span {
+                    color: var(--secondary);
+                }
+            }
+
+            .textPara {
+                color: rgba(31, 39, 55, 1);
+                font-size: 14px;
+                font-weight: 400;
+                margin: 10px 0px;
+                text-align: center;
+
+                @include md {
+                    text-align: start;
+                }
+            }
+
+            .box {
+                background-color: var(--primary);
+                padding: 20px 15px;
+                border-radius: 24px;
+                margin-top: 20px;
+
+                p {
+                    color: rgba(255, 255, 255, 1);
+                    font-weight: 400;
+                    font-size: 13px;
+                    padding-left: 15px;
+
+                    @include sm {
+                        font-size: 15px;
+                    }
+                }
+
+                .flex {
+                    align-items: center;
+                    margin-top: 10px;
+                    gap: 2px;
+                    flex-direction: column;
+
+                    @include sm {
+                        flex-direction: row;
+                        gap: 10px;
+                    }
+                }
+
+                input {
+                    width: 100%;
+                    background: rgba(235, 234, 239, 1);
+                    padding: 11px 25px;
+                    border-radius: 50px;
+                    outline: none;
+                    border: none;
+                    font-size: 14px;
+                    flex: 1;
+
+                    &::placeholder {
+                        color: rgba(31, 39, 55, 1);
+                        font-weight: 400;
+                    }
+                }
+
+                .button {
+                    display: block;
+                    width: 100%;
+                    background-color: var(--secondary);
+                    color: rgba(255, 255, 255, 1);
+                    border: 1px solid var(--secondary);
+                    padding: 11px 25px;
+                    border-radius: 50px;
+                    font-size: 14px;
+                    font-weight: 500;
+                    cursor: pointer;
+                    transition: 0.5s;
+                    margin: 10px 0px;
+
+                    @include sm {
+                        width: fit-content;
+                    }
+
+                    &:hover {
+                        color: var(--secondary);
+                        background-color: rgba(255, 255, 255, 1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.carousel-container {
+    width: 100%;
+    position: relative;
+    height: 220px;
+
+    @include md {
+        height: 150px;
+    }
+
+    .boxesRescheduleAppointment {
+        display: flex;
+        flex-direction: row-reverse;
+        transition: transform 0.5s ease;
+
+        .box {
+            flex: 1;
+            min-width: 100%;
+            position: absolute;
+            transition: 0.5s;
+        }
+    }
+}
+
+
+.menu-button {
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(31, 39, 55, 1);
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    text-align: start;
+    font-size: 15px;
+    border-radius: 24px;
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, 1);
+    display: flex;
+    justify-content: space-between;
+
+    .icon {
+        svg {
+            color: rgba(203, 200, 206, 1) !important;
+        }
+    }
+}
+
+.menu-items {
+    position: absolute;
+    background-color: #ffffff;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    padding: 8px 0;
+    z-index: 9999; // Ensure it's on top of other elements
+    transform: translateY(1%);
+    color: #000 !important;
+    border-radius: 24px;
+    transition: 0.5s;
+
+}
+
+.menu-item {
+    display: block;
+    padding: 10px 16px;
+    text-decoration: none;
+    color: #000 !important;
+    cursor: pointer;
+    font-size: 13px !important;
+    z-index: 9999; // Ensure it's on top of other elements
+
+    &:first-of-type {
+        border-top-left-radius: 24px;
+        border-top-right-radius: 24px;
+    }
+
+    &:focus,
+    &:hover {
+        background-color: rgba(246, 244, 246, 1);
+    }
+}
+
+.contentCongratulations {
+    display: flex;
+    gap: 15px;
+    .text {
+        h3 {
+            color: rgba(255, 255, 255, 1);
+            font-weight: 400;
+            font-size: 20px;
+        }
+        p {
+            color: rgba(255, 255, 255, 1);
+            font-weight: 400;
+            font-size: 13px;
+            padding-left: 0px !important;
+
+            @include sm {
+                font-size: 15px;
+            }
+        }
+    }
+    button {
+        width: 200px !important;
+    }
+}

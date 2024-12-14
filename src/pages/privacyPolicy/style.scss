@@ -1,0 +1,72 @@
+@import '../../mixins.scss';
+
+.privacyPolicy {
+    padding: 65px 0px 60px;
+    background-image: url(../../assets/background_2.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+
+    .title {
+        h1 {
+            text-align: center;
+            color: var(--primary);
+            font-size: 35px;
+            font-weight: 500;
+            position: relative;
+            @include sm {
+                font-size: 54px;
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: -15px;
+                background-color: rgba(198, 217, 255, 1);
+                height: 2px;
+                width: 250px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+
+    .content {
+        padding-top: 50px;
+
+        .date {
+            p {
+                color: rgba(31, 39, 55, 1);
+                font-size: 17px;
+                font-weight: 400;
+            }
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 22px;
+            font-weight: 600;
+            margin: 30px 0px 20px;
+        }
+
+        p {
+            color: rgba(31, 39, 55, 1);
+            font-weight: 400;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            padding-left: 20px;
+
+            li {
+                color: rgba(31, 39, 55, 1);
+                font-size: 15px;
+                font-weight: 400;
+                margin: 5px 0px;
+                span {
+                    color: var(--primary);
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}

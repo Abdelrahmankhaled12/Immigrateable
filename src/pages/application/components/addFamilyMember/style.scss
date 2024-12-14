@@ -1,0 +1,63 @@
+.addFamilyMember {
+    .title {
+        &.top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            button {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                border: 1px solid rgba(198, 217, 255, 1);
+                color: var(--primary);
+                font-size: 20px;
+                cursor: pointer;
+                background-color: transparent;
+            }
+        }
+    }
+    .photograph {
+        .title {
+            margin-top: 20px;
+        }
+    }
+}
+
+.addFamilyMemberButton {
+    .box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        transition: 0.5s;
+        z-index: 3;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        h2 {
+            font-weight: 500;
+            font-size: 40px;
+            color: var(--primary);
+            text-transform: capitalize;
+        }
+
+        .icon {
+            width: 48px;
+            height: 48px;
+            border: 1px solid rgba(198, 217, 255, 1);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            svg {
+                font-size: 30px;
+                color: rgba(29, 62, 129, 1);
+                font-weight: 300;
+            }
+        }
+    }
+}

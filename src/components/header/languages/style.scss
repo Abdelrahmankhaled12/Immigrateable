@@ -1,0 +1,103 @@
+@import '../../../mixins.scss';
+
+.languages {
+    border: none !important;
+
+    .MuiFormControl-root {
+        border: none;
+    }
+
+    .MuiSvgIcon-root {
+        display: none;
+        outline: none;
+
+        &:hover {
+            border: 1px solid rgba(227, 223, 229, 1);
+        }
+    }
+
+
+
+    .MuiSelect-select {
+        padding: 0px !important;
+        border: none;
+
+        p {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            padding: 11px 12px !important;
+            border: 1px solid rgba(227, 223, 229, 1);
+            color: var(--primary);
+            font-size: 14px;
+            font-weight: 500;
+            background-color: transparent;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.5s;
+            text-transform: uppercase;
+
+            svg {
+                font-size: 11px;
+            }
+
+            &:hover {
+                background-color: var(--primary);
+                color: rgba(255, 255, 255, 1);
+            }
+
+            @include sm {
+                padding: 11px 25px !important;
+                gap: 10px;
+            }
+        }
+    }
+
+    fieldset {
+        border: none !important;
+    }
+
+
+}
+
+.MuiPaper-root {
+    border-radius: 24px !important;
+    margin-top: 5px;
+
+    ul {
+        padding: 0px 0px;
+
+        li {
+            padding: 0;
+
+            p {
+                display: flex;
+                gap: 5px;
+                align-items: center;
+                justify-content: center;
+                padding: 8px 10px;
+                color: var(--primary);
+                font-size: 14px;
+                font-weight: 500;
+                background-color: transparent;
+                cursor: pointer;
+                transition: 0.5s;
+                text-transform: uppercase;
+
+                svg {
+                    display: none;
+                }
+
+                // &:hover {
+                //     background-color: var(--primary);
+                //     color: rgba(255, 255, 255, 1);
+                // }
+
+                @include sm {
+                    padding: 8px 20px;
+                    gap: 10px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+@import '../../mixins.scss';
+
+.signup {
+    padding: 30px 0px 60px;
+    .grid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include md {
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            justify-content: start;
+            align-items: start;
+            gap: 40px;
+        }
+        .image {
+            display: none;
+            @include md {
+                display: block;
+            }
+            img {
+                width: 100%;
+            }
+        }
+    }
+}

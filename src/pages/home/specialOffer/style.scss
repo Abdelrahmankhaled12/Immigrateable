@@ -1,0 +1,86 @@
+@import '../../../mixins.scss';
+
+.specialOffer {
+    padding: 100px 0px 120px;
+    background-image: url('../../../assets/specialOffer_2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    overflow: hidden;
+
+    @include sm {
+        background-image: url('../../../assets/specialOffer.png');
+        background-position: top;
+        padding: 50px 0px;
+    }
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        @include sm {
+            grid-template-columns: 1fr 1fr;
+        }
+        .text {
+            position: relative;
+            top: 100px;
+            text-align: center;
+            @include sm {
+                top: 0px;
+                text-align: start;
+            }
+            h1 {
+                color: var(--primary);
+                font-weight: 500;
+                font-size: 42px;
+                padding-bottom: 10px;
+                position: relative;
+                margin-bottom: 20px;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    background-color: var(--primary);
+                    height: 0.5px;
+                    width: 180px;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    @include sm {
+                        left: 0;
+                        transform: translateX(0%);
+                    }
+                }
+            }
+            p {
+                color: rgba(31, 39, 55, 1);
+                font-weight: 500;
+                font-size: 15px;
+                @include sm {
+                    font-size: 17px;
+                }
+            }
+            button {
+                display: flex;
+                align-items: center;
+                width: fit-content;
+                background-color: var(--secondary);
+                gap: 10px;
+                color: rgba(255, 255, 255, 1);
+                border: 1px solid var(--secondary);
+                padding: 13px 35px;
+                border-radius: 50px;
+                font-size: 12px;
+                font-weight: 500;
+                cursor: pointer;
+                transition: 0.5s;
+                margin: 20px auto 0px;
+                @include sm {
+                    font-size: 14px;
+                    margin: 20px 0px 0px 0px;
+                }
+                &:hover {
+                    color: var(--secondary);
+                    background-color: rgba(255, 255, 255, 1);
+                }
+            }
+        }
+    }
+}

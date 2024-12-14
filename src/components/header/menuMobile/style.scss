@@ -1,0 +1,146 @@
+@import '../../../mixins.scss';
+
+.menu {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.159);
+    height: 100vh;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 100000;
+    transform: translateX(-100%);
+    transition: 0.5s;
+    display: block;
+
+    .flex {
+        justify-content: start;
+
+        .content {
+            background-color: #FFFFFF !important;
+            height: 100vh;
+            width: 400px;
+            padding: 20px 0px 0px;
+            display: flex;
+            flex-direction: column;
+
+            .top {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 1px solid rgb(0 0 0 / 9%);
+                padding: 10px 20px;
+                color: #ffffff;
+
+                .logo {
+                    display: flex;
+                    align-items: center;
+
+                    img {
+                        width: 50px;
+                    }
+
+                    p {
+                        font-weight: 800;
+                        font-size: 27px;
+                        color: var(--primary);
+                        position: relative;
+                        top: 1px;
+
+                        span {
+                            color: rgba(235, 68, 92, 1);
+                        }
+                    }
+                }
+
+
+                h2 {
+                    font-size: 25px;
+                    font-weight: 600;
+                }
+
+                button {
+                    background-color: transparent;
+                    border: none;
+                    font-size: 25px;
+                    cursor: pointer;
+                    color: var(--primary);
+                }
+            }
+
+            .buttons {
+                padding-left: 30px;
+                margin-bottom: 5px;
+                .loginButton {
+                    padding: 8px 30px;
+                    border: 1px solid rgba(227, 223, 229, 1);
+                    color: var(--primary);
+                    font-size: 15px;
+                    font-weight: 500;
+                    background-color: transparent;
+                    border-radius: 50px;
+                    cursor: pointer;
+                    transition: 0.5s;
+                    width: fit-content;
+                    margin-top: 20px;
+                    &:hover {
+                        background-color: var(--primary);
+                        color: rgba(255, 255, 255, 1);
+                    }
+                }
+                .startForFree {
+                    width: fit-content;
+                    background-color: var(--secondary);
+                    color: rgba(255, 255, 255, 1);
+                    border: 1px solid var(--secondary);
+                    padding: 11px 25px;
+                    border-radius: 50px;
+                    font-size: 14px;
+                    font-weight: 500;
+                    margin-right: 12px;
+                    cursor: pointer;
+                    transition: 0.5s;
+                    &:hover {
+                        color: var(--secondary);
+                        background-color: rgba(255, 255, 255, 1);
+                    }
+                }
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                list-style: none;
+                gap: 25px;
+                margin-top: 20px;
+                padding-left: 30px;
+
+                li {
+                    font-size: 18px;
+                    color: var(--primary);
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: 0.5s;
+
+                    &:hover {
+                        color: var(--primary);
+                    }
+
+                    &.active {
+                        color: var(--primary);
+                    }
+                }
+            }
+
+
+        }
+    }
+
+    @include md {
+        display: none;
+    }
+}
+
+.menu_active {
+    transform: translateX(0%);
+}

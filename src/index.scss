@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import './mixins.scss';
+
+:root {
+  --primary: #1d3e81;
+  --secondary: rgba(235, 68, 92, 1);
+  --black: #0D121E;
+  --color-bar: #F1F6F9;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f9f9f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #1d3e81;
+  border-radius: 30px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif !important;
+}
+
+body {
+  font-family: "Poppins", sans-serif !important;
+  position: relative;
+  overflow-x: hidden;
+  background-color: #ffffff;
+}
+
+.flex {
+  display: flex;
+}
+
+ul {
+  padding: 0;
+}
+
+
+button {
+  outline: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 12px 20px;
+
+  @include xl {
+    padding: 13px 0px;
+  }
+}
+
+
+.radios {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 50px;
+  border: 1px solid rgba(125, 125, 128, 0.211);
+  background-color: rgba(235, 234, 239, 1);
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  label {
+    padding: 10px 20px 12px;
+    font-size: 15px;
+    color: rgba(125, 125, 128, 1);
+    font-weight: 400;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    transition: 0.5s;
+    text-align: center;
+    &.left {
+      border-right: 1px solid rgba(125, 125, 128, 0.211);
+
+    }
+  }
+}
+
+input[type="radio"]:checked+label {
+  background-color: rgba(198, 217, 255, 1);
+  color: rgba(31, 39, 55, 1);
+
+  &.left {
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+  }
+  &.right {
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+  }
+}
+
+.arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+  background-color: #ffffff;
+
+  svg {
+      font-size: 17px;
+      color: rgba(31, 39, 55, 0.657);
+  }
+
+  &.left {
+      left: 60px;
+  }
+
+  &.right {
+      right: 60px;
+  }
+}
+
+.indicators {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.indicators .dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(227, 226, 231, 1);
+  margin: 0 5px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.indicators .dot.active {
+  width: 36px;
+  border-radius: 12px;
+  background-color: var(--primary); 
+}

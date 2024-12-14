@@ -1,0 +1,263 @@
+@import '../../../mixins.scss';
+
+.pricing {
+    padding: 50px 0px;
+
+    .title {
+        text-align: center;
+        line-height: 1.4;
+
+        h1 {
+            font-weight: 500;
+            font-size: 28px;
+            color: var(--primary);
+
+            @include sm {
+                font-size: 40px;
+            }
+        }
+
+        p {
+            color: rgb(31, 39, 55);
+            font-size: 15px;
+            font-weight: 400;
+
+            @include sm {
+                font-size: 18px;
+            }
+        }
+    }
+
+    .boxes {
+        display: flex;
+        gap: 20px;
+        margin-top: 40px;
+        overflow-y: hidden;
+        overflow-x: auto;
+        position: relative;
+
+        &::-webkit-scrollbar {
+            height: 0px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: #f9f9f9;
+        }
+        @include lg {
+            overflow-y:visible;
+            overflow-x: visible;
+        }
+
+        .box {
+            border: 2px solid rgba(189, 189, 189, 1);
+            background-color: #ffffff;
+            border-radius: 24px;
+            padding: 0px 20px 0px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-shrink: 0;
+
+            @include sm {
+                width: calc((97.5% - 15px)/ 2);
+            }
+
+            @include lg {
+                width: calc((95% - 15px)/ 4);
+            }
+
+            .category {
+                background-color: rgba(189, 189, 189, 1);
+                width: 150px;
+                margin: 0px auto;
+                padding: 10px 0px;
+                border-bottom-left-radius: 24px;
+                border-bottom-right-radius: 24px;
+
+                p {
+                    font-size: 25px;
+                    color: rgba(255, 255, 255, 1);
+                    font-weight: 500;
+                    text-align: center;
+                }
+            }
+
+            .price {
+                display: flex;
+                justify-content: center;
+                margin-top: 14px;
+                position: relative;
+
+                p {
+                    color: rgba(31, 39, 55, 1);
+                    font-size: 50px;
+                    font-weight: 600;
+                }
+
+                span {
+                    color: rgba(31, 39, 55, 1);
+                    font-size: 22px;
+                    font-weight: 500;
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 120px;
+                    height: 1px;
+                    background-color: rgba(189, 189, 189, 1);
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+
+            ul {
+                margin: 25px 0px 0px;
+                list-style: none;
+
+                li {
+                    font-size: 13px;
+                    color: rgba(31, 39, 55, 1);
+                    font-weight: 400;
+                    margin: 12px 0px;
+                    position: relative;
+                    padding-left: 20px;
+
+                    &::before {
+                        content: "\2713";
+                        color: rgba(189, 189, 189, 1);
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        font-size: 15px;
+                        font-weight: 600;
+                    }
+                }
+            }
+
+            button {
+                display: block;
+                width: fit-content;
+                background-color: var(--secondary);
+                color: rgba(255, 255, 255, 1);
+                border: 1px solid var(--secondary);
+                padding: 11px 25px;
+                border-radius: 50px;
+                font-size: 14px;
+                font-weight: 500;
+                cursor: pointer;
+                transition: 0.5s;
+                margin: 10px auto 20px;
+
+                &:hover {
+                    color: var(--secondary);
+                    background-color: rgba(255, 255, 255, 1);
+                }
+            }
+
+            &:nth-of-type(2) {
+                border: 2px solid rgba(92, 143, 244, 1);
+
+                .category {
+                    background-color: rgba(92, 143, 244, 1);
+                }
+
+                .price {
+                    &::before {
+                        background-color: rgba(92, 143, 244, 1);
+                    }
+                }
+
+                ul {
+                    li {
+                        &::before {
+                            color: rgba(92, 143, 244, 1);
+                        }
+                    }
+                }
+            }
+
+            &:nth-of-type(3) {
+                border: 2px solid var(--primary);
+
+                .category {
+                    background-color: var(--primary);
+                }
+
+                .price {
+                    &::before {
+                        background-color: var(--primary);
+                    }
+                }
+
+                ul {
+                    li {
+                        &::before {
+                            color: var(--primary);
+                        }
+                    }
+                }
+            }
+
+            &:nth-of-type(4) {
+                border: 2px solid var(--secondary);
+
+                .category {
+                    background-color: var(--secondary);
+                }
+
+                .price {
+                    &::before {
+                        background-color: var(--secondary);
+                    }
+                }
+
+                ul {
+                    li {
+                        &::before {
+                            color: var(--secondary);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .indicators {
+        display: block;
+        margin-top: 20px;
+
+        @include lg {
+            display: none;
+        }
+    }
+
+    .rightImage {
+        position: absolute;
+        top: 0;
+        right: -232px;
+        z-index: -1;
+        display: none;
+        img {
+            width: 250px;
+        }
+        @include lgg {
+            display: block;
+        }
+    }
+
+    .leftImage {
+        position: absolute;
+        bottom: 0;
+        left: -232px;
+        z-index: -1;
+        display: none;
+        img {
+            width: 250px;
+        }
+        @include lgg {
+            display: block;
+        }
+    }
+}

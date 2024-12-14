@@ -1,0 +1,55 @@
+.comboboxInput {
+    width: 100%;
+    background: rgba(235, 234, 239, 1);
+    padding: 11px 25px;
+    border-radius: 50px;
+    outline: none;
+    border: none;
+    font-size: 14px;
+    flex: 1;
+    transition: 0.5s;
+    z-index: 10000;
+    position: relative;
+
+    &::placeholder {
+        color: rgba(31, 39, 55, 1);
+        font-weight: 400;
+    }
+}
+
+.comboboxOptions {
+    box-shadow: 0px 4px 12px 0px rgba(56, 69, 93, 0.30);
+    width: var(--input-width);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 1);
+    background-color: #ffffff;
+    padding: 0.25rem 0px;
+    position: absolute;
+    height: 200px;
+    overflow-y: auto;
+    top: 45px;
+    z-index: 10000;
+    &::-webkit-scrollbar {
+        width: 0px;
+    }
+}
+
+.comboboxOption {
+    gap: 0.5rem;
+    border-radius: 0.5rem;
+    color: rgba(31, 39, 55, 1);
+    font-size: 14px;
+    cursor: pointer;
+    padding: 12px 20px;
+    transition: 0.5s;
+    background-color: rgba(255, 255, 255, 1) !important;
+    z-index: 10000;
+position: relative;
+    &.focused {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    &:hover {
+        background-color: rgb(143, 18, 143);
+    }
+}

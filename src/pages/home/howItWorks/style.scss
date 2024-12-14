@@ -1,0 +1,117 @@
+@import '../../../mixins.scss';
+
+.howItWorks {
+    padding: 20px 0px;
+    background-image: url('../../../assets/howItWorks.png');
+    padding: 20px 0px;
+    background-image: url(/src/assets/howItWorks.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .title {
+        h1 {
+            color: rgba(255, 255, 255, 1);
+            font-weight: 500;
+            font-size: 40px;
+            text-align: center;
+        }
+    }
+
+    .boxes {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        @include sm {
+            grid-template-columns: 1fr 1fr;
+        }
+        @include md {
+            grid-template-columns: 1fr 1fr 2fr;
+        }
+        .box {
+            background-color: rgba(255, 255, 255, 1);
+            padding: 40px 20px 30px;
+            position: relative;
+            border-radius: 24px;
+            margin-top: 50px;
+
+            .number {
+                width: 50px;
+                height: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: rgba(255, 255, 255, 1);
+                background-color: var(--secondary);
+                border-radius: 50%;
+                position: absolute;
+                top: -20px;
+
+                p {
+                    color: rgba(255, 255, 255, 1);
+                    font-size: 22px;
+                    font-weight: 500;
+                }
+            }
+
+            h2 {
+                color: var(--primary);
+                font-weight: 500;
+                padding-bottom: 10px;
+                margin-bottom: 10px;
+                position: relative;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    background-color: var(--secondary);
+                    height: 1px;
+                    width: 120px;
+                    bottom: 0;
+                }
+            }
+
+            p {
+                color: rgba(31, 39, 55, 1);
+                font-weight: 400;
+                font-size: 15px;
+            }
+
+            ul {
+                padding-left: 18px;
+
+                li {
+                    font-size: 15px;
+                    color: rgba(31, 39, 55, 1);
+                    margin: 5px 0px;
+                    span {
+                        font-weight: 500;
+                    }
+                }
+            }
+
+        }
+
+    }
+
+    button {
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        margin: 40px auto 20px;
+        background-color: var(--secondary);
+        gap: 10px;
+        color: rgba(255, 255, 255, 1);
+        border: 1px solid var(--secondary);
+        padding: 13px 35px;
+        border-radius: 50px;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: 0.5s;
+
+        &:hover {
+            color: var(--secondary);
+            background-color: rgba(255, 255, 255, 1);
+        }
+    }
+}

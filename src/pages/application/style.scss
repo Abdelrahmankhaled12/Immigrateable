@@ -1,0 +1,172 @@
+@import '../../mixins.scss';
+
+.application {
+    padding-bottom: 80px;
+    h1 {
+        color: var(--primary);
+        font-size: 30px;
+        font-weight: 500;
+        margin-bottom: 20px;
+        @include sm {
+            font-size: 54px;
+        }
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 25px;
+        @include md {
+            grid-template-columns: 3fr 1fr;
+        }
+    }
+
+    .controls {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 50px;
+        button {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 25px;
+            border-radius: 50px;
+            color: rgba(255, 255, 255, 1);
+            background-color: rgba(235, 68, 92, 1);
+            border: 1px solid rgba(235, 68, 92, 1);
+            cursor: pointer;
+            transition: 0.5s;
+            font-size: 16px;
+            font-weight: 500;
+
+            &:hover {
+                background-color: transparent;
+                color: rgba(235, 68, 92, 1);
+            }
+
+            &.backButton {
+                background-color: transparent;
+                color: var(--primary);
+                border: 1px solid rgba(227, 223, 229, 1);
+                &:hover {
+                    background-color: var(--primary);
+                    color: rgba(227, 223, 229, 1);
+                }
+            }
+
+            &.hide {
+                opacity: 0.5;
+                pointer-events: none;
+            }
+        }
+    }
+
+    .gridHome {
+        display: grid;
+        grid-template-columns: 1fr;
+        @include md {
+            grid-template-columns: 1fr 1fr;
+        }
+        gap: 10px;
+    }
+
+    .box {
+        border: 2px solid rgba(198, 217, 255, 1);
+        padding: 20px 10px 20px 10px;
+        border-radius: 24px;
+        margin-bottom: 30px;
+        @include sm {
+            padding: 20px 40px 30px 40px;
+        }
+        .title {
+            line-height: 1.5;
+            margin-bottom: 20px;
+
+            h2 {
+                color: var(--primary);
+                font-size: 30px;
+                font-weight: 500;
+                text-transform: capitalize;
+                @include sm {
+                    font-size: 40px;
+                }
+            }
+
+            p {
+                color: rgba(31, 39, 55, 1);
+                font-size: 16px;
+                font-weight: 300;
+            }
+        }
+
+        .fields {
+            display: grid;
+            grid-template-columns: 1fr;
+            @include sm {
+                grid-template-columns: 1fr 1fr;
+            }
+            gap: 24px;
+        }
+
+    }
+
+    .radiosFields {
+        p {
+            color: var(--primary);
+            font-size: 14px;
+            padding-left: 14px;
+            font-weight: 400;
+            span {
+                color: red;
+                font-size: 18px;
+                position: relative;
+                top: 2px;
+
+            }
+        }
+    }
+}
+
+.loading {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.input {
+    label {
+        color: var(--primary);
+        font-size: 14px;
+        padding-left: 14px;
+        font-weight: 400;
+
+        span {
+            color: red;
+            font-size: 18px;
+            position: relative;
+            top: 2px;
+        }
+    }
+
+    input {
+        width: 100%;
+        background: rgba(235, 234, 239, 1);
+        padding: 13px 20px 15px;
+        border-radius: 50px;
+        outline: none;
+        border: none;
+        font-size: 14px;
+
+        &::placeholder {
+            color: rgba(125, 125, 128, 1);
+            font-weight: 400;
+        }
+    }
+}
+
+.activeInput {
+    background-color: rgba(198, 217, 255, 1) !important;
+    color: rgba(31, 39, 55, 1) !important;
+}

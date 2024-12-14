@@ -1,0 +1,49 @@
+.photograph {
+    .title {
+        margin-bottom: 10px !important;
+
+        p {
+            color: rgba(31, 39, 55, 1) !important;
+            font-size: 14px !important;
+            font-weight: 400 !important;
+        }
+    }
+
+    .error {
+        color: rgba(221, 50, 74, 1);
+        font-size: 12px;
+        font-weight: 400;
+        margin: 4px 5px 0px;
+    }
+}
+
+.inputPhotograth {
+    width: 100%;
+    background: rgba(235, 234, 239, 1);
+    padding: 10px 20px 12px;
+    border-radius: 50px;
+    outline: none;
+    border: none;
+    font-size: 14px;
+    color: rgba(125, 125, 128, 1);
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 2px;
+    cursor: pointer;
+    button {
+        background-color: var(--primary);
+        color: #ffffff;
+        border: none;
+        padding: 4px 15px;
+        border-radius: 50px;
+        font-size: 12px;
+        cursor: pointer;
+    }
+    &.active {
+        background-color: rgba(198, 217, 255, 1);
+        color: rgba(31, 39, 55, 1);
+
+    }
+}

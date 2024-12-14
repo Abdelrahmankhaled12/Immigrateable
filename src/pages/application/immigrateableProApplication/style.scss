@@ -1,0 +1,137 @@
+@import '../../../mixins.scss';
+
+.immigrateableProApplication {
+    position: sticky;
+    top: 50px;
+    height: fit-content;
+    display: none;
+
+    @include md {
+        display: block;
+    }
+
+    .partOne {
+        background-color: rgba(239, 239, 239, 0.3);
+        padding: 20px 30px 5px;
+        border-radius: 20px;
+
+        h3 {
+            font-size: 28px;
+            color: rgba(235, 68, 92, 1);
+            font-weight: 500;
+            line-height: 1.2;
+        }
+    }
+
+    ul {
+        list-style: none;
+        margin-top: 15px;
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            color: var(--primary);
+            font-size: 18px;
+            font-weight: 400;
+            transition: 0.5s;
+
+            .icon {
+                width: 26px;
+                height: 26px;
+                border-radius: 50%;
+                border: 1px solid rgba(235, 68, 92, 1);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                background-color: rgba(255, 255, 255, 1);
+                transition: 0.5s;
+
+                svg {
+                    color: rgba(235, 68, 92, 1);
+                    font-size: 14px;
+                    transition: 0.5s;
+
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    height: 100%;
+                    background-color: rgba(203, 200, 206, 1);
+                    width: 1.5px;
+                    bottom: -100%;
+                }
+            }
+
+            &:last-of-type {
+                .icon {
+                    &::before {
+                        content: "";
+                        height: 0%;
+                    }
+                }
+            }
+
+            &.hide {
+                color: rgba(203, 200, 206, 1);
+
+                .icon {
+                    border: 1px solid rgba(203, 200, 206, 1);
+
+                    svg {
+                        color: rgba(203, 200, 206, 1);
+                    }
+                }
+            }
+
+            &.done {
+                color: rgba(203, 200, 206, 1);
+
+                .icon {
+                    opacity: 0.5;
+                }
+            }
+
+        }
+    }
+
+    .partTwo {
+        button {
+            display: block;
+            width: 100%;
+            font-size: 16px;
+            font-weight: 500;
+            background-color: var(--primary);
+            color: rgba(255, 255, 255, 1);
+            border-radius: 50px;
+            outline: none;
+            border: 1px solid var(--primary);
+            margin: 10px 0px;
+            padding: 10px 0px 12px;
+            transition: 0.5s;
+            cursor: pointer;
+
+            &:hover {
+                color: var(--primary);
+                background-color: rgba(255, 255, 255, 1);
+            }
+
+            &:last-of-type {
+                color: var(--primary);
+                background-color: rgba(255, 255, 255, 1);
+                border: 1px solid rgba(227, 223, 229, 1);
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+
+            }
+
+
+        }
+    }
+
+}

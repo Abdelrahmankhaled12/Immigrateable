@@ -1,0 +1,148 @@
+@import '../../../mixins.scss';
+
+.testimonials {
+    background-color: #F6F4F6;
+    padding: 50px 0px;
+    position: relative;
+
+    .title {
+        h1 {
+            color: var(--primary);
+            font-size: 40px;
+            font-weight: 500;
+            text-align: center;
+        }
+    }
+
+    .boxes {
+        display: flex;
+        gap: 20px;
+        overflow-y: hidden;
+        overflow-x: auto;
+        padding: 30px 0px;
+        align-items: stretch;
+        &::-webkit-scrollbar {
+            height: 0px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: #f9f9f9;
+        }
+
+        .box {
+            background-color: #ffffff;
+            box-shadow: 0px 4px 12px 0px rgba(56, 69, 93, 0.15);
+            border-radius: 24px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+
+            @include sm {
+                display: grid;
+                grid-template-columns: 1.5fr 1fr;
+            }
+
+            flex-shrink: 0;
+            z-index: 100;
+            width: 90%;
+
+            @include sm {
+                width: calc((98% - 15px)/ 2);
+            }
+
+            @include lg {
+                width: calc((98% - 15px)/ 3);
+            }
+
+            .image {
+                border-top-right-radius: 24px;
+                border-bottom-right-radius: 24px;
+                order: 1;
+                height: 238px;
+                &.imageMobile {
+                    display: block;
+                    @include sm {
+                        display: none;
+                    }
+                }
+                &.imageDesktop {
+                    display: none;
+                    @include sm {
+                        display: block;
+                    }
+                }
+                @include sm {
+                    height: 100%;
+                }
+                img {
+                    border-bottom-left-radius: 24px;
+                    border-bottom-right-radius: 24px;
+                    width: 100%;
+                    order: 1;
+
+                    @include sm {
+                        border-top-right-radius: 24px;
+                        border-bottom-right-radius: 24px;
+                        height:100%;
+                        border-bottom-left-radius: 0px;
+                    }
+                }
+            }
+
+            .text {
+                padding: 20px 25px;
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+
+                h2 {
+                    font-weight: 400;
+                    font-weight: 500;
+                    font-size: 15px;
+                    color: rgba(31, 39, 55, 1);
+
+                    span {
+                        color: var(--secondary);
+                        font-size: 19px;
+                        font-weight: 600;
+                    }
+                }
+
+                .footer {
+                    position: relative;
+                    padding-top: 8px;
+                    margin-top: 20px;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        background-color: var(--secondary);
+                        width: 120px;
+                        height: 1px;
+                        top: 0;
+                        left: 0;
+                    }
+
+                    p {
+                        color: var(--secondary);
+                        font-weight: 500;
+                        font-size: 22px;
+                    }
+
+                    span {
+                        color: #1F2737;
+                        font-size: 13px;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+    }
+    .arrow {
+        display: none;
+        @include lgg {
+            display: block;
+        }
+    }
+}
+

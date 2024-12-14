@@ -1,0 +1,79 @@
+@import '../../../mixins.scss';
+
+.fags {
+    padding: 20px 0px 40px;
+    position: relative;
+    @include sm {
+        padding: 20px 0px 80px;
+    }
+    .leftImage {
+        position: absolute;
+        bottom: 0;
+        display: none;
+        img {
+            width: 150px;
+        }
+        @include md {
+            left: -70px;
+        }
+        @include lg {
+            display: block;
+        }
+        @include xl {
+            left: 0px;
+        }
+    }
+
+    .rightImage {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        display: none;
+        @include lg {
+            display: block;
+        }
+        
+    }
+
+    .title {
+        h1 {
+            font-weight: 500;
+            font-size: 50px;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+    }
+    .accordion {
+        border-radius: 15px;
+        margin: 10px 0px;
+        border: none !important;
+        z-index: 25;
+        box-shadow: none;
+
+        &::before {
+            position: relative;
+        }
+        .text {
+            align-items: center;
+            gap: 10px;
+            span {
+                color: rgba(31, 39, 55, 1);
+                font-weight: 400;
+                font-size: 15px;
+            }
+        }
+    }
+    .css-1f773le-MuiButtonBase-root-MuiAccordionSummary-root {
+        background-color: rgba(246, 244, 246, 1) !important;
+        border-radius: 15px !important;
+        border: 1px solid rgba(246, 244, 246, 1) !important;
+    }
+
+    .MuiPaper-root {
+        background-color: rgba(246, 244, 246, 1) !important;
+        border-radius: 15px !important;
+        border: 1px solid rgba(246, 244, 246, 1) !important;
+    }
+
+}

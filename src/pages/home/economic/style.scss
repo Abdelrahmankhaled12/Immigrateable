@@ -1,0 +1,277 @@
+@import '../../../mixins.scss';
+
+.economic {
+    padding: 50px 0px;
+    position: relative;
+
+    .title {
+        line-height: 1.4;
+
+        h1 {
+            color: var(--primary);
+            font-size: 30px;
+            font-weight: 500;
+            text-align: center;
+
+            span {
+                color: var(--secondary);
+            }
+
+            @include sm {
+                font-size: 40px;
+            }
+        }
+
+        p {
+            color: var(--primary);
+            font-size: 25px;
+            font-weight: 500;
+            text-align: center;
+        }
+    }
+
+    .boxes {
+        display: flex;
+        gap: 20px;
+        overflow-y: hidden;
+        overflow-x: auto;
+        padding: 30px 0px;
+        height: 100% !important;
+        align-items: stretch;
+
+        &::-webkit-scrollbar {
+            height: 0px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: #f9f9f9;
+        }
+
+        .box {
+            flex-shrink: 0;
+            z-index: 100;
+            border-bottom-right-radius: 24px;
+            border-bottom-left-radius: 24px;
+            width: 98%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: auto;
+
+            @include sm {
+                width: calc((98% - 15px)/ 2);
+            }
+
+            @include md {
+                width: calc((97% - 15px)/ 3);
+            }
+
+            @include lgg {
+                width: calc((95% - 15px)/ 4);
+            }
+
+            .image {
+                width: 100%;
+                height: 120px;
+                position: relative;
+
+                img {
+                    border-top-right-radius: 24px;
+                    border-top-left-radius: 24px;
+                    width: 100%;
+                    height: 250px;
+                    position: absolute;
+                }
+            }
+
+            .text {
+                position: relative;
+                z-index: 5;
+                border-bottom-right-radius: 24px;
+                border-bottom-left-radius: 24px;
+                background: linear-gradient(180deg, rgba(29, 62, 129, 0) 0%, #1D3E81 18.84%);
+                padding: 80px 25px 20px;
+
+                h2 {
+                    color: #ffffff;
+                    font-size: 23px;
+                    font-weight: 500;
+                    text-align: center;
+                    margin-bottom: 10px;
+                }
+
+                .salary {
+                    display: flex;
+                    gap: 40px;
+                    padding: 12px 0px;
+                    border-top: 1px solid rgba(112, 160, 255, 0.5);
+                    border-bottom: 1px solid rgba(112, 160, 255, 0.5);
+
+                    .textSalary {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+
+                        span {
+                            color: #FFFFFF;
+                            font-size: 13px;
+                        }
+                    }
+
+                    .averageSalary {
+                        h3 {
+                            font-weight: 500;
+                            font-size: 18px;
+                            color: #FFFFFF;
+                        }
+
+                        span {
+                            color: #FFFFFF;
+                            font-size: 13px;
+                        }
+                    }
+                }
+
+                .jobGrowth {
+                    display: flex;
+                    gap: 20px;
+                    align-items: center;
+                    padding: 12px 0px;
+                    border-top: 1px solid rgba(112, 160, 255, 0.5);
+                    border-bottom: 1px solid rgba(112, 160, 255, 0.5);
+
+                    .textJobGrowth {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+
+                        span {
+                            color: #FFFFFF;
+                            font-size: 13px;
+                        }
+                    }
+
+                    h3 {
+                        font-weight: 500;
+                        font-size: 18px;
+                        color: #FFFFFF;
+                        line-height: 1.2;
+
+                        span {
+                            color: #FFFFFF;
+                            font-size: 10px;
+                        }
+                    }
+
+
+                }
+
+                h4 {
+                    color: #ffffff;
+                    font-weight: 500;
+                    margin-top: 15px;
+                }
+
+                ul {
+                    padding-left: 20px;
+
+                    li {
+                        color: #ffffff;
+                        font-size: 400;
+                        font-size: 14px;
+                        margin: 10px 0px;
+                    }
+                }
+            }
+        }
+    }
+
+    .startYourApplication {
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        margin: 20px auto 20px;
+        background-color: var(--secondary);
+        gap: 10px;
+        color: rgba(255, 255, 255, 1);
+        border: 1px solid var(--secondary);
+        padding: 13px 35px;
+        border-radius: 50px;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: 0.5s;
+
+        &:hover {
+            color: var(--secondary);
+            background-color: rgba(255, 255, 255, 1);
+        }
+    }
+
+    .arrow {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        outline: none;
+        position: absolute;
+        top: 50%;
+        cursor: pointer;
+        background-color: #F6F4F6;
+        display: none;
+
+        svg {
+            font-size: 17px;
+            color: rgba(31, 39, 55, 0.657);
+        }
+
+        &.left {
+            left: 60px;
+        }
+
+        &.right {
+            right: 60px;
+        }
+
+        @include lgg {
+            display: block;
+        }
+    }
+
+    .rightImage {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0px;
+        z-index: -1;
+        display: none;
+
+        img {
+            width: 250px;
+        }
+
+        @include lgg {
+            display: block;
+        }
+    }
+
+    .leftImage {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0px;
+        z-index: -1;
+        display: none;
+
+        img {
+            width: 250px;
+        }
+
+        @include lgg {
+            display: block;
+        }
+    }
+}

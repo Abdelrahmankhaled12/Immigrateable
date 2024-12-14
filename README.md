@@ -25,9 +25,6 @@ The project leverages the following technologies: 🔧🌐🌄
 
 ---
 
-
----
-
 ## 📷 Screenshots
 
 
